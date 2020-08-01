@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Menu</title>
+		<meta charset="utf-8">
+		<!-- Add favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<!-- Old style font -->
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/menu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+		<!-- Importing three.js -->
+    <script src="js/three.js"></script>
+	</head>
+	<body id="mainBox">
+		<audio id="mammmagamma">
+			<source src="js/sounds/menuMaggamma.mp3" type="audio/ogg">
+		</audio>
+		<!-- This div is just for adding a transparent background -->
+		<div id="transparent-background"></div>
+		<div id="main-title">
+			<h1>LOW POLY ROBOTS ATTACK!</h1>
+			<h4>Created by Andrea Napoletani & Sergio Picca</h4>
+			<h6>Final project of the Interactive Graphics Course - Sapienza</h6>
+		</div>
+    <div id="levels">
+			<h1>Select the game level: </h1>
+	    <h2 class="lvl" id="level_easy"  onclick="selectLevel('easy')" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default';">EASY</h2>
+	    <h2 class="lvl" id="level_medium" onclick="selectLevel('medium')" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default';">MEDIUM</h2>
+	    <h2 class="lvl" id="level_hard" onclick="selectLevel('hard')" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default';">HARD</h2>
+			<h5 id="error"> You have to choose one level!.</h5>
+			<h2 id="startGame" onclick="startGame()" onmouseover="this.style.cursor='pointer'" onmouseout="this.style.cursor='default';">PLAY.</h2>
+    </div>
+    <script>
+			var audio = document.getElementById("mammmagamma");
+			audio.play();
+			audio.loop = true;
+      window.selected = "";
+
+			/**
+			 * Function to change the style and get the right selected level.
+			 * @param  {string} lvl 	Name of the level selected.
+			 * @return {void}     		The function does not return anything.
+			 */
+      function selectLevel(lvl) {
+        var elem = document.getElementsByClassName("lvl");
+        for (var i = 0; i < elem.length; i++){
+            elem[i].style.textDecoration = "none";
+				}
+        window.selected = lvl;
+        document.getElementById("level_" + lvl).style.textDecoration = "underline";
+      }
+
+			/**
+			 * Function that will trigger the start of the game given the
+			 * selected level.
+			 * @return {void} The function simply change page.
+			 */
+      function startGame() {
+        console.log(window.selected);
+        if (selected == "") {
+	        document.getElementById("error").style.visibility = "visible";
+					document.getElementById("startGame").style.borderColor = "red";
+        }
+        else {
+					audio.pause();
+          window.location.href = 'skybox.html?lvl=' + window.selected;
+        }
+      }
+    </script>
+	</body>
+</html>

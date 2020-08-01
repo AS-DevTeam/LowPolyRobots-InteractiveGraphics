@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>LOW POLY ROBOTS ATTACKS!</title>
+		<meta charset="utf-8">
+		<!-- Add favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<!-- Old style font -->
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/view.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+		<!-- Importing three.js -->
+    <script src="js/three.js"></script>
+	</head>
+	<body>
+    <!-- Importing first test script -->
+    <script type="module" src="js/skybox.js"></script>
+		<div id="blocker">
+			<div id="instructions">
+				<span id="display-instructions">Click to play</span>
+				<br />
+				(W, A, S, D = Move, MOUSE = Look around, R = Reload
+				<br />
+				SPACE = Run,  SHIFT = Target mode)
+			</div>
+		</div>
+
+		<div id="menu">
+			<button id="back" type="button" name="button" onclick="location.href = 'index.html';">BACK TO MENU.</button>
+			<button id="retry" type="button" name="button" onclick="window.location.reload()">RESTART !</button>
+		</div>
+
+		<!-- This div is just for adding a transparent background -->
+		<div id="transparent-background"></div>
+		<div id="player-info">
+			<h2>Player Info</h2>
+			<h3 id="score">SCORE: 0</h3>
+			<!-- Information about the health of the player -->
+			<h4>Health: </h4> <div id="health-value">100%</div>
+			<progress id="health" min="0" max="100" value="100"></progress>
+
+			<!-- Add muntions display to the player info -->
+			<div id="munitions">
+				<h4>Munitions: </h4>
+				<div class="shot" id="1"></div>
+				<div class="shot" id="2"></div>
+				<div class="shot" id="3"></div>
+				<div class="shot" id="4"></div>
+				<div class="shot" id="5"></div>
+				<div class="shot" id="6"></div>
+				<div class="shot" id="7"></div>
+				<div class="shot" id="8"></div>
+				<div class="shot" id="9"></div>
+				<div class="shot" id="10"></div>
+				<div class="shot" id="11"></div>
+				<div class="shot" id="12"></div>
+				<div class="shot" id="13"></div>
+				<div class="shot" id="14"></div>
+				<div class="shot" id="15"></div>
+				<div class="shot" id="16"></div>
+				<div class="shot" id="17"></div>
+				<div class="shot" id="18"></div>
+				<div class="shot" id="19"></div>
+				<div class="shot" id="20"></div>
+				<div class="shot" id="21"></div>
+				<div class="shot" id="22"></div>
+				<div class="shot" id="23"></div>
+				<div class="shot" id="24"></div>
+			</div>
+
+			<!-- Once the munitions are over the message shows up -->
+			<div id="reload-message">
+				<h1>RELOAD</h1>
+				<h4>Press R - To Reload</h4>
+			</div>
+		</div>
+
+		<div id="information">
+			<h3 class="pulsate" id="stopMusic">Press N - To pause/play music</h3>
+			<h3 class="pulsate" id="pause">Press ESC - To PAUSE</h3>
+		</div>
+		<div id="loading">
+			<div>
+			  <div>LOADING...</div>
+			  <div class="progress"><div id="progressbar"></div></div>
+			</div>
+		</div>
+
+	</body>
+</html>
