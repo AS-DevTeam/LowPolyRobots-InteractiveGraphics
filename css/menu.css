@@ -1,0 +1,94 @@
+*{
+  font-family: 'Press Start 2P', cursive;
+}
+
+#transparent-background {
+  position: absolute;
+  top: 8vh;
+  width: 99vw;
+  height: 80vh;
+  background-color: #9D8C9A;
+  opacity: 0.5;
+  margin: 0;
+}
+
+/**
+ * Set the style of the main title
+ */
+#main-title{
+  position: absolute;
+  left: 4vw;
+  top: 4vh;
+}
+#main-title h1{
+  width: 20vw;
+  font-size: 11vh;
+  color: #F41BDE;
+}
+#main-title h4, h6{
+  color: #FFFFFF;
+  width: 20vw;
+}
+
+#mainBox {
+  position: absolute;
+  background-image: url(../js/images/80s.jpg);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/**
+ * Style of the levels selection.
+ */
+#levels {
+  position:absolute;
+  left: 55vw;
+  top: 20vh;
+}
+
+#levels h1{
+  width: 25vw;
+  color: #FFFFFF;
+}
+
+#levels h2{
+  width: 25vw;
+  color: #FFFFFF;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-decoration: none;
+}
+
+/**
+ * Customizing the style of the "start game", now
+ * is more similar to a button
+ */
+#startGame{
+  background-color: #F41BDE;
+  color: #FFFFFF;
+  padding: 2vh;
+  border: 3px solid #A8359C;
+}
+#startGame:hover {
+  background-color: #F85BFB;
+}
+
+#level_easy{
+  color:
+}
+
+#level_medium{
+  color:
+}
+
+#level_hard{
+  color:
+}
+
+#error{
+  visibility: hidden;
+  color: red;
+  background: #000000;
+}

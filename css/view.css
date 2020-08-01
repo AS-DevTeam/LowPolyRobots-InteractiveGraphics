@@ -1,0 +1,276 @@
+*{
+  font-family: 'Press Start 2P', cursive;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body {
+  background-color: #000000;
+  margin: 0;
+  overflow: hidden;
+}
+
+/**
+ * Style of the menu
+ */
+#menu {
+  visibility: hidden;
+  position: absolute;
+  top: 52vh;
+  left: 34vw;
+}
+/**
+ * Styles of the button in the menu
+ */
+#menu button{
+  background-color: #F41BDE;
+  color: #FFFFFF;
+  padding: 2vh;
+  border: 3px solid #A8359C;
+  position: relative;
+  top: 2vh;
+  width: 14vw;
+}
+/**
+ * Change the background color on hover
+ */
+#menu button:hover{
+  background-color: #F85BFB;
+}
+
+/**
+ * Style of the blocker element for the point lock
+ */
+#blocker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+/**
+ * Style of the instructions to display on the screen
+ */
+#instructions {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  box-orient: horizontal;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  color: #ffffff;
+  text-align: center;
+  cursor: pointer;
+}
+
+#display-instructions{
+   font-size:40px;
+}
+
+#loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: xx-large;
+  color: #FFFFFF;
+}
+#loading>div>div {
+  padding: 2px;
+}
+.progress {
+  width: 50vw;
+  border: 3px solid #B90127;
+  border-radius: 10px;
+}
+#progressbar {
+  margin: 1vh;
+  width: 0;
+  transition: width ease-out .5s;
+  height: 1em;
+  background-color: #FFA1B4;
+  background-image: linear-gradient(
+    -45deg,
+    #E92249 25%,
+    transparent 25%,
+    transparent 50%,
+    #E92249 50%,
+    #E92249 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 50px 50px;
+  animation: progressanim 2s linear infinite;
+}
+
+@keyframes progressanim {
+  0% {
+    background-position: 50px 50px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/**
+ * Style of the transparent background, the same used also in the
+ * menu. In this way there will be an opaque background.
+ * @type {[type]}
+ */
+#transparent-background {
+  position: absolute;
+  top: 8vh;
+  width: 34vw;
+  height: 28vh;
+  top: 4vh;
+  left: 3vw;
+  background-color: #9D8C9A;
+  opacity: 0.5;
+  margin: 0;
+  visibility: hidden;
+}
+/**
+ * Set the syle of the player information, where we have information about the
+ * health value and the number of shot that has.
+ */
+#player-info{
+  width: 30vw;
+  height: 10vh;
+  position: absolute;
+  top: 4vh;
+  left: 4vw;
+  color: white;
+  visibility: hidden;
+}
+
+#player-info h2{
+  color: #F41BDE;
+  text-decoration: underline;
+}
+
+#player-info h4{
+  margin-bottom: 1vh;
+  margin-top: 0
+}
+
+#health-value{
+  display: inline;
+}
+/**
+ * Style of the health progress bar
+ */
+#health {
+  position: absolute;
+  margin-bottom: 1vh;
+  border-radius: 10px;
+  margin-left: 1vw;
+  width: 80%;
+}
+
+/**
+ * Set the style of the score, just the font size
+ */
+#score{
+  font-size: 3vh;
+  margin-top: 0;
+  margin-bottom: 3vh;
+}
+
+/**
+ * Style the munitions div, they are rectangles that will disappear once the
+ * character will use them. These styles will let the divs line up next to each
+ * other while accepting dimensions.
+ */
+#munitions{
+  margin-top: 2vh;
+}
+#munitions h4{
+  margin-top: 1vh;
+}
+#munitions div {
+    display: block;
+    float: left;
+    width: 0.3vw;
+    height: 2vh;
+    /* a small margin to separate the blocks */
+    margin-right: 5px;
+}
+/**
+ * Defining some style for the shot divs, when they appear
+ * and disappear
+ */
+.shot {
+  background: #D12799;
+  border: 2px solid #E53BE4;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.45s;
+}
+
+.shot.fade {
+  opacity: 0;
+}
+
+.shot.appear {
+  opacity: 1;
+}
+
+/**
+ * Style of the reload message
+ */
+#reload-message {
+  position: relative;
+  top: 1vh;
+  color: #E92249;
+  margin-top: 0;
+}
+
+#reload-message h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 5vh;
+}
+
+/**
+ * This is the class for the pulse animation
+ */
+.pulsate {
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+#information {
+  visibility: hidden;
+  position: absolute;
+  color: #FFFFFF;
+  top: 5vh;
+  right: 1vw;
+  width: 15vw;
+}
