@@ -8,7 +8,7 @@ The application is a survival game, so there are three different levels of diffi
 
 The game is developed using **threejs** library by [Andrea Napoletani](https://www.linkedin.com/in/andrea-napoletani-aa0b87166/) and [Sergio Picca](https://www.linkedin.com/in/sergio-picca-801b0b173/).
 
-If you want to play, just click [here](https://sapienzainteractivegraphicscourse.github.io/final-project-as-team/).
+If you want to play, just click [here](https://as-devteam.github.io/LowPolyRobots-InteractiveGraphics/).
 
 Feel free to contact us and give some advice about the project!
 
